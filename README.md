@@ -18,7 +18,7 @@ Expliquez comment installer et configurer votre projet. Fournissez des instructi
 
 Détaillez comment utiliser votre projet. Donnez des exemples de commandes, d'entrées/sorties, et toute autre information pertinente pour les utilisateurs.
 
-![Capture d'écran de mon projet](assets/select.png)
+![Capture d'écran de mon projet](./src/assets/select.png)
 
 ## Contribuer
 
