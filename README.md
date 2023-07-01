@@ -18,6 +18,8 @@ Expliquez comment installer et configurer votre projet. Fournissez des instructi
 
 Détaillez comment utiliser votre projet. Donnez des exemples de commandes, d'entrées/sorties, et toute autre information pertinente pour les utilisateurs.
 
+![Capture d'écran de mon projet](assets/select.png)
+
 ## Contribuer
 
 Indiquez comment les autres personnes peuvent contribuer à votre projet. Précisez s'il y a des directives spécifiques à suivre pour les contributions, des lignes directrices de style de code, des informations sur les tests, etc.
