@@ -1,45 +1,47 @@
- <div class="container">
-    <h1>Titre de la page</h1>
-     <hr>
-     <div class="row">
-         <div class="col-6">
-             Ligne(s) sélectionné(s) : {{ idSelected.length }}
-         </div>
-     </div>
-     <br><br>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [(ngModel)]="isCheckedAll" (change)="toggleCheckAll()">
-              </div>
-          </th>
-          <th>Photo</th>
-          <th>Nom(s) & Prénom(s)</th>
-          <th>Email</th>
-          <th>Téléphone</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let person of users | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
-          <td>
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [(ngModel)]="person.isChecked" (change)="selectPerson(person.id.value)"  [checked]="isCheckedAll">
-              </div>
-          </td>
-          <td>
-              <img [src]="person.picture.thumbnail" alt="">
-          </td>
-          <td> <b>{{ person.name.title }}</b> {{ person.name.first }} {{ person.name.last }}</td>
-          <td>{{ person.email }}</td>
-          <td>{{ person.phone }}</td>
-          <td>{{ person.genre }}</td>
-        </tr>
-        <!-- Ajoutez les 18 autres lignes ici -->
-      </tbody>
-    </table>
-     <div class="pagination">
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</div>
+<div class="container">
+  <h1>Titre de la page</h1>
+  <hr>
+  <div class="row">
+    <div class="col-6">
+      Ligne(s) sélectionné(s) : {{ idSelected.length }}
+    </div>
   </div>
+  <br><br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="isCheckedAll" (change)="toggleCheckAll()">
+          </div>
+        </th>
+        <th>Photo</th>
+        <th>Nom(s) & Prénom(s)</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of users | paginate: { itemsPerPage: 10, currentPage: p }"
+        [ngClass]="{'table-primary': person.isChecked}">
+        <td>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="person.isChecked"
+              (change)="selectPerson(person.id.value)" [checked]="isCheckedAll">
+          </div>
+        </td>
+        <td>
+          <img [src]="person.picture.thumbnail" alt="">
+        </td>
+        <td> <b>{{ person.name.title }}</b> {{ person.name.first }} {{ person.name.last }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.phone }}</td>
+        <td>{{ person.genre }}</td>
+      </tr>
+      <!-- Ajoutez les 18 autres lignes ici -->
+    </tbody>
+  </table>
+  <div class="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

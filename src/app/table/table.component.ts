@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+    selector: 'app-table',
+    templateUrl: './table.component.html',
+    styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
     isLoad = true;
@@ -14,7 +14,7 @@ export class TableComponent implements OnInit {
     constructor(private http: HttpClient) {
     }
     ngOnInit() {
-    this.getRandomUsers()
+        this.getRandomUsers()
     }
 
     getRandomUsers() {
@@ -26,22 +26,22 @@ export class TableComponent implements OnInit {
         });
     }
 
-     toggleCheckAll() {
-         if(this.isCheckedAll === false) {
-             this.idSelected = []
-         } else {
-             this.idSelected = []
+    toggleCheckAll() {
+        if (this.isCheckedAll === false) {
+            this.idSelected = []
+        } else {
+            this.idSelected = []
             this.users.forEach((user: any) => {
-              user.isChecked = this.isCheckedAll;
-              this.idSelected.push(user.id.value)
+                user.isChecked = this.isCheckedAll;
+                this.idSelected.push(user.id.value)
             });
-         }
+        }
     }
 
     selectPerson(id: any) {
         const person = this.users.find((user: any) => user.id.value === id);
         const index = this.idSelected.indexOf(id);
-        if(index === -1) {
+        if (index === -1) {
             this.idSelected.push(id)
         } else {
             this.idSelected.splice(index, 1)
